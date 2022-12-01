@@ -1,4 +1,4 @@
-.selector {
+.select {
     display: block;
     width: 100%;
     margin-top: 0;
@@ -16,4 +16,5 @@
     font-family: inherit;
     font-size: .875rem;
     font-weight: 600;
+    appearance: none
 }
