@@ -12,30 +12,25 @@ def index():
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    fname = db.Column(db.String, unique=True)
-    lname = db.Column(db.String unique=True)
+    username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String)
     password = db.Column(db.String)
 
 with app.app_context():
     db.create_all()
     
-@app.route("/inscription", methods=["GET", "POST"]) #pour créer son compte
+@app.route("/users/create", methods=["GET", "POST"]) #pour créer son compte
 def user_create():
     if request.method == "POST":
         user = User(
+            username=request.form["username"],
             email=request.form["email"],
         )
         db.session.add(user)
         db.session.commit()
-        return redirect("user_detail", id=user.id)
+        return redirect(url_for("user_detail", id=user.id))
 
-    return render_template("registration.html") #tristan, faut créer la page de user_create
-
-@app.route("/dashboard")
-def user_detail(id):
-    user = db.get_or_404(User, id)
-    return render_template("dashboard.html", user=user)
+    return render_template("user/create.html") #tristan, faut créer la page de user_create
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host="0.0.0.0")
