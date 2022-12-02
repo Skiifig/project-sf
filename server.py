@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy() # création extension
@@ -12,36 +12,30 @@ def index():
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, unique=True, nullable=False)
+    fname = db.Column(db.String, unique=True)
+    lname = db.Column(db.String unique=True)
     email = db.Column(db.String)
     password = db.Column(db.String)
 
 with app.app_context():
     db.create_all()
     
-@app.route("/users/create", methods=["GET", "POST"]) #pour créer son compte
+@app.route("/inscription", methods=["GET", "POST"]) #pour créer son compte
 def user_create():
     if request.method == "POST":
         user = User(
-            username=request.form["username"],
             email=request.form["email"],
         )
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for("user_detail", id=user.id))
+        return redirect("user_detail", id=user.id)
 
-    return render_template("user/create.html") #tristan, faut créer la page de user_create
+    return render_template("registration.html") #tristan, faut créer la page de user_create
 
-@app.route("/user/<int:id>/delete", methods=["GET", "POST"]) #pour supprimer son compte
-def user_delete(id):
+@app.route("/dashboard")
+def user_detail(id):
     user = db.get_or_404(User, id)
-
-    if request.method == "POST":
-        db.session.delete(user)
-        db.session.commit()
-        return redirect(url_for("user_list"))
-
-    return render_template("user/delete.html", user=user) #tristan, faut créer la page de user_delete
+    return render_template("dashboard.html", user=user)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host="0.0.0.0")
