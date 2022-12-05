@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="stylesheet" href="../static/css/registration.css">
+    <link rel="stylesheet" href="../static/css/confirmation.css">
     <link rel="stylesheet" href="../static/css/global.css">
-    <script src="../static/js/selector.js"></script>
-    <script src="../static/js/password.js"></script>
     <link rel="shortcut icon" type="image/png" href="../static/images/logo.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -18,10 +16,24 @@
     <title>Singlefind Inscription</title>
 </head>
 <body>
-    <div class="form-container text-center align-items-center py-4 my-5">
-        <form action="/dashboard" class="form-signin w-100 m-auto p-1 text-success" style="max-width: 500px;">
-            <div class="wrapper d-flex flex-column w-100 M(0auto)">
-                <span class="Fs(26)">Confirmez votre création de compte</span>
+    <div class="form-container text-center align-items-center py-4 my-4">
+        <div class="title Fs(36) Fw(b) mb-4">Confirmez votre inscription</div>
+        <form autocomplete="off" action="#" class="form-signin w-75 m-auto p-4 text-success">
+            <div class="wrapper justify-content-around d-flex M(0auto)">
+                <div class="question-container flex-column d-flex border p-4" style="min-width: 400px;max-width: 400px;">
+                    <span class="question Fs(26) mb-5" style="color: #ed147d;">Que recherchez-vous ?</span>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche un homme</button>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche une femme</button>
+                </div>
+                <div class="question-container flex-column d-flex border p-4" style="max-width: 500px; min-width: 500px">
+                    <span class="question Fs(26) mb-5" style="color: #ed147d;">Dans quelle ville habitez-vous ?</span>
+                    <input class="location border bg-dark" type="text" placeholder="Indiquez votre ville la plus proche">
+                </div>
+                <div class="question-container flex-column d-flex border p-4" style="max-width: 400px; min-width: 400px">
+                    <span class="question Fs(26) mb-2" style="color: #ed147d;">Êtes-vous un homme ou une femme ?</span>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche un homme</button>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche une femme</button>
+                </div>
             </div>
         </form>
     </div>

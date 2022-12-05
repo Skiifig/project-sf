@@ -19,18 +19,18 @@
 </head>
 <body onload="FillAllSelector()">
     <div class="form-container text-center align-items-center py-4 my-5">
-        <form action="/dashboard" class="form-signin w-100 m-auto p-1" style="max-width: 330px;">
+        <form action="/inscription" class="form-signin w-100 m-auto p-1" style="max-width: 330px;" method="post">
             <div class="box-container"></div>
             <i class="fa-solid fa-2x fa-users bg-danger rounded-circle p-3" style="border: 3px solid black;"></i>
             <h1 class="h3 mt-3 mb-4 font-weight-normal">S'inscrire à Singlefind</h1>
             <div class="name-container d-flex mb-3">
                 <label for="inputFname" class="sr-only">Prénom</label>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Prénom" required autofocus>
+                <input type="text" id="Fname" class="form-control" placeholder="Prénom" required autofocus>
                 <label for="inputLname" class="sr-only">Nom</label>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Nom" required>
+                <input type="text" id="Lname" class="form-control" placeholder="Nom" required>
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="E-mail">
+                <input type="email" name="email" class="form-control" placeholder="E-mail">
                 <div class="input-group-append">
                 <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-envelope"></i></span>
                 </div>
