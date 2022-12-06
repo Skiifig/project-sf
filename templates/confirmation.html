@@ -16,8 +16,8 @@
     <title>Singlefind Inscription</title>
 </head>
 <body>
-    <div class="form-container text-center align-items-center py-4 my-4">
-        <div class="title Fs(36) Fw(b) mb-4">Confirmez votre inscription</div>
+    <div class="form-container text-center align-items-center pt-2 mt-2">
+        <div class="title Fs(36) Fw(b) mb-1">Confirmez votre inscription</div>
         <form autocomplete="off" action="#" class="form-signin w-75 m-auto p-4 text-success">
             <div class="wrapper justify-content-around d-flex M(0auto)">
                 <div class="question-container flex-column d-flex border p-4" style="min-width: 400px;max-width: 400px;">
@@ -31,14 +31,45 @@
                 </div>
                 <div class="question-container flex-column d-flex border p-4" style="max-width: 400px; min-width: 400px">
                     <span class="question Fs(26) mb-2" style="color: #ed147d;">Êtes-vous un homme ou une femme ?</span>
-                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche un homme</button>
-                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche une femme</button>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je suis un homme</button>
+                    <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je suis une femme</button>
+                </div>
                 </div>
             </div>
+            <div class="form-container text-center align-items-center">
+        	<div class="title Fs(36) Fw(b)">Vos centres d'intérêts</div>
+        	<fieldset>
+    			<legend>Choississez vos préférences:</legend>
+    			<div class="wrapper justify-content-around d-flex M(0auto)"><div>
+      			<input type="checkbox" id="scales" name="scales">
+      			<label for="scales">Jeux vidéo</label>
+    			</div>
+    			<div>
+      			<input type="checkbox" id="horns" name="horns">
+      			<label for="horns">Cuisine</label>
+    			</div>
+    			<div>
+      			<input type="checkbox" id="horns" name="horns">
+      			<label for="horns">Cinéma</label>
+    			</div>
+    			<div>
+      			<input type="checkbox" id="horns" name="horns">
+      			<label for="horns">Lecture</label>
+    			</div>
+    			<div>
+      			<input type="checkbox" id="horns" name="horns">
+      			<label for="horns">Musique</label>
+    			</div>
+		</fieldset>
+        	<div class="wrapper justify-content-around d-flex M(0auto)">
+       			<img src="../static/images/videogames.jpeg" width=240 height=160>
+                    	<img src="../static/images/cuisine.jpg" width=240 height=160>
+                    	<img src="../static/images/cinema.jpg" width=240 height=160>
+                  	<img src="../static/images/lecture.jpg" width=240 height=160>
+                    <img src="../static/images/musique.jpeg" width=240 height=160>
+           </div>
+          <button class="btn btn-primary" type="submit" value="Validation">Validation</button>
         </form>
-    </div>
-    <div style="width: 100%; height: 3px; bottom: 0;" class="progress position-absolute">
-        <div class="progress-bar progress-bar-striped bg-info w-50" role="progressbar"></div>
     </div>
 </body>
 </html>
