@@ -1,0 +1,43 @@
+.bottom-navbar {
+    align-items: center;
+    justify-content: space-around;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-item {
+    padding: 14px 16px;
+    font-size: 20px;
+    font-weight: Bold;
+}
+
+.navbar-item:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    color: blueviolet;
+}
+
+.settings {
+    position: absolute;
+    bottom: -1;
+    top: 0;
+    right: 0;
+    border: 3px solid grey;
+    border-radius: 60px;
+    color: grey;
+    cursor: pointer;
+}
+
+.deconnexion {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+}

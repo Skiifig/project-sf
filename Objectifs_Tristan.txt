@@ -1,5 +1,4 @@
 Objectifs du week-end :
 Terminer design page index (Composants Background, Jumbotron et Footer)
-Terminer design page de confirmation d'inscription
-Lier les pages (index à inscription, inscription à connexion et connexion à details)
-Arriver à créer un utlisateur dans la base de données (SQLAlchemy) et l'afficher dans dashboard
+Terminer design page de confirmation d'inscription (Louis)
+Page de settings qui permettra à l'utilisateur de supprimer son compte
