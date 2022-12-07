@@ -9,7 +9,7 @@ function CreateDay(i) {
 
 function CreateMonth(i) {
     Month = document.getElementById("month-select");
-    Month.innerHTML = Month.innerHTML + `<option>${i}</option>`
+    Month.innerHTML = Month.innerHTML + `<option id='month'>${i}</option>`
 }
 
 function CreateYear() {
@@ -22,7 +22,7 @@ function FillAllSelector() {
     for (let i = 0; i <= 31; i++) {
         CreateDay(i)
     }
-    for (const i of monthNames) {
+    for (let i = 0; i <= 12; i++) {
         CreateMonth(i)
     }
     for (let i = 0; i <= 100; i++) {
