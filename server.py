@@ -40,15 +40,7 @@ def user_create():
 def user_detail():
     id = request.args.get('id')
     user = db.get_or_404(User, id)
-    if request.method == "POST":
-        return redirect(url_for('settings', id=user.id))
     return render_template("dashboard.html", user=user)
-
-@app.route("/settings")
-def settings():
-    id = request.args.get('id')
-    user = db.get_or_404(User, id)
-    return render_template("settings.html", user=user)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host="0.0.0.0")
