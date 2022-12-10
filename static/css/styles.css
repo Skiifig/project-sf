@@ -4,8 +4,11 @@
 .Ov\(h\) {
     overflow: hidden;
 }
-.Ovy\(s\) {
+.Ovy\(h\) {
     overflow-y: hidden;
+}
+.Ovy\(x\) {
+    overflow-x: hidden;
 }
 .Expand {
     width: 100%;
@@ -44,6 +47,9 @@
 .Fs\(36\) {
     font-size: 36px;
 }
+.Fs\(44\) {
+    font-size: 44px;
+}
 .Fw\(600\) {
     font-weight: 600;
 }
@@ -61,4 +67,7 @@
 }
 .Z\(1\) {
     z-index: 1;
+}
+.Z\(2\) {
+    z-index: 2;
 }
