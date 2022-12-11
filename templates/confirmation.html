@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../static/css/button.css">
     <link rel="stylesheet" href="../static/css/confirmation.css">
     <link rel="stylesheet" href="../static/css/global.css">
+	<script src="../static/js/suggestions.js"></script>
+	<script src="../static/js/recommandation.js"></script>
     <link rel="shortcut icon" type="image/png" href="../static/images/logo.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -18,7 +20,7 @@
 </head>
 <body class="Ov(h)">
 	<div class="background">
-	<img src="../static/images/suu.png" width=500%>
+		<img src="" alt="background" width=500%>
 	</div>	
     <div class="form-container text-center align-items-center pt-2 mt-2">
         <div class="title Fs(36) Fw(b) mb-1">Confirmez votre inscription</div>
@@ -29,9 +31,10 @@
                     <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche un homme</button>
                     <button class="btn btn-success btn-block answer" style="border-radius: 2rem;">Je cherche une femme</button>
                 </div>
-                <div class="question-container flex-column d-flex border p-4" style="max-width: 500px; min-width: 500px">
+                <div id="question-container" class="flex-column d-flex border p-4" style="max-width: 500px; min-width: 500px">
                     <span class="question Fs(26) mb-5" style="color: #ed147d;">Dans quelle ville habitez-vous ?</span>
-                    <input class="location border bg-dark" type="text" placeholder="Indiquez votre ville la plus proche">
+                    <input id="input-city" onkeyup="recommend(event)" class="location border" type="text" placeholder="Indiquez votre ville la plus proche">
+					<div class="autocom-box text-left text-dark p-2 border d-none" style="overflow-y: auto; opacity: 0;"></div>
                 </div>
                 <div class="question-container flex-column d-flex border p-4" style="max-width: 400px; min-width: 400px">
                     <span class="question Fs(26) mb-2" style="color: #ed147d;">Êtes-vous un homme ou une femme ?</span>
@@ -47,39 +50,40 @@
 		    		<div class="d-flex float-left">
 		        		<div class="custom-control custom-checkbox iconSelect mr-2">
 		            		<input type="checkbox" id="customCheck3" name="customCheck" value="1" class="custom-control-input">
-		            		<label class="custom-control-label" for="customCheck3">
+		            		<label class="C(p) custom-control-label" for="customCheck3">
 		            		<img src="../static/images/videogames.jpg" width=160 height=106>
 		            		<div class="mt-1">Jeux vidéo</div>
 		            		</label>
 		        		</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
 							<input type="checkbox" id="customCheck4" name="customCheck" value="2" class="custom-control-input">
-							<label class="custom-control-label" for="customCheck4">
+							<label class="C(p) custom-control-label" for="customCheck4">
 							<img src="../static/images/cuisine.jpg" width=160 height=106>
 							<div class="mt-1">Cuisine</div>
 					   	 	</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
 							<input type="checkbox" id="customCheck5" name="customCheck" value="3" class="custom-control-input">
-							<label class="custom-control-label" for="customCheck5">
+							<label class="C(p) custom-control-label" for="customCheck5">
 							<img src="../static/images/cinema.jpg" width=160 height=106>
 							<div class="mt-1">Cinéma</div>
 							</label>
 				   	 	</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
 							<input type="checkbox" id="customCheck6" name="customCheck" value="4" class="custom-control-input">
-							<label class="custom-control-label" for="customCheck6">
+							<label class="C(p) custom-control-label" for="customCheck6">
 							<img src="../static/images/lecture.jpg" width=160 height=106>
 							<div class="mt-1">Lecture</div>
 							</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
 							<input type="checkbox" id="customCheck7" name="customCheck" value="5" class="custom-control-input">
-							<label class="custom-control-label" for="customCheck7">
+							<label class="C(p) custom-control-label" for="customCheck7">
 							<img src="../static/images/musique.jpeg" width=160 height=106>
 							<div class="mt-1">Musique</div>
 							</label>
 						</div>
+					</div>
 		    	</div>
 		    </div>
 		    <div class="container">
