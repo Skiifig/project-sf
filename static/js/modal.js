@@ -1,5 +1,4 @@
 function showModal() {
-    const element = document.querySelectorAll('.modal-backdrop');
-    element.remove();
-
+    const element = document.querySelector('.modal-backdrop');
+    console.log(element);
 }
