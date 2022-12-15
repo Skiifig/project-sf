@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
 db = SQLAlchemy() # création extension
 
@@ -9,6 +10,16 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db" # configure SQLite database
 
     db.init_app(app) # initialise l'app avec l'extension
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    from .models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
