@@ -6,25 +6,25 @@ from . import db
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/connexion')
+@auth.route('/login')
 def login():
     return render_template("login.html")
 
 @auth.route('/connexion', methods=['POST'])
 def login_post():
-    email = request.form["email"]
-    password = request.form["password"]
-    remember = True if request.form["remember"] else False
+    email = request.form.get("email") # Obtenir valeur de l'email entré
+    password = request.form.get("password") # Obtenir valeur du mot de passe entré
+    remember = True if request.form.get("remember") else False
 
-    user = User.query.filter_by(email=email).first()
+    user = User.query.filter_by(email=email).first() # Obtenir la ligne de l'utilisateur dans la base de données
 
-    if not user or not check_password_hash(user.password):
-        flash('Votre adresse mail ou votre mot de passe est incorrect')
-        return redirect(url_for('auth.login'))
-    login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    if not user or not check_password_hash(user.password): # Si l'email ou le mot de passe sont faux
+        flash('Votre adresse mail ou votre mot de passe est incorrect') # Renvoyer l'erreur dans la page
+        return redirect(url_for('auth.login')) # Redirection vers la page de connexion
+    login_user(user, remember=remember) # Sinon connecter utilisateur
+    return redirect(url_for('main.profile')) # Afficher la page de profil
 
-@auth.route('/inscription')
+@auth.route('/signup')
 def signup():
     return render_template("registration.html")
 
@@ -37,7 +37,7 @@ def signup_post():
     user = User.query.filter_by(email=email).first()
     if user:
         return redirect(url_for(auth.signup))
-    new_user = User(fname=fname, lname=lname, email=email, password=password)
+    new_user = User(fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
     return redirect(url_for("auth.login"))

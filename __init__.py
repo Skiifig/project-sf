@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-db = SQLAlchemy() # création extension
+db = SQLAlchemy() # Création de la base de données
 
 def create_app():
-    app = Flask(__name__) # creation app
+    app = Flask(__name__) # Création de l'application
 
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db" # configure SQLite database
 
