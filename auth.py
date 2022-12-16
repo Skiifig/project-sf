@@ -10,7 +10,7 @@ auth = Blueprint('auth', __name__)
 def login():
     return render_template("login.html")
 
-@auth.route('/connexion', methods=['POST'])
+@auth.route('/login', methods=['POST'])
 def login_post():
     email = request.form.get("email") # Obtenir valeur de l'email entré
     password = request.form.get("password") # Obtenir valeur du mot de passe entré
@@ -18,7 +18,7 @@ def login_post():
 
     user = User.query.filter_by(email=email).first() # Obtenir la ligne de l'utilisateur dans la base de données
 
-    if not user or not check_password_hash(user.password): # Si l'email ou le mot de passe sont faux
+    if not user or not check_password_hash(user.password, password): # Si l'email ou le mot de passe sont faux
         flash('Votre adresse mail ou votre mot de passe est incorrect') # Renvoyer l'erreur dans la page
         return redirect(url_for('auth.login')) # Redirection vers la page de connexion
     login_user(user, remember=remember) # Sinon connecter utilisateur
@@ -30,10 +30,10 @@ def signup():
 
 @auth.route('/signup', methods=['POST'])
 def signup_post():
-    fname = request.form["fname"]
-    lname = request.form["lname"]
-    email = request.form["email"]
-    password = request.form["password"]
+    fname = request.form.get("fname")
+    lname = request.form.get("lname")
+    email = request.form.get("email")
+    password = request.form.get("password")
     user = User.query.filter_by(email=email).first()
     if user:
         return redirect(url_for(auth.signup))

@@ -7,6 +7,7 @@ db = SQLAlchemy() # Création de la base de données
 def create_app():
     app = Flask(__name__) # Création de l'application
 
+    app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuop1'
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db" # configure SQLite database
 
     db.init_app(app) # initialise l'app avec l'extension
