@@ -1,8 +1,8 @@
 function updateField() {
-    passwordField = document.getElementById('password-field');
-    if (passwordField.type == 'password') {
-        passwordField.type = 'text'
+    passwordField = document.getElementById('password-field'); // Sélection du champ de mot de passe
+    if (passwordField.type == 'password') { // Si l'input est de type mot de passe
+        passwordField.type = 'text' // Changer en text
     } else {
-        passwordField.type = 'password'
+        passwordField.type = 'password' // Sinon changer en mot de passe
     }
 }

@@ -12,3 +12,8 @@ def index():
 @login_required
 def profile():
     return render_template('dashboard.html', name=current_user.fname)
+
+@main.route('/settings')
+@login_required
+def settings():
+    return render_template('settings.html', user=current_user)

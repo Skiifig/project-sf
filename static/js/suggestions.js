@@ -1,3 +1,4 @@
+// Tableau de villes possibles
 let suggestions = [
     "Aix-en-Provence",
     "Amiens",

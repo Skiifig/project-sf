@@ -38,12 +38,12 @@ def signup_post():
     if user:
         return redirect(url_for(auth.signup))
     new_user = User(fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'))
-    db.session.add(new_user)
-    db.session.commit()
+    db.session.add(new_user) # Ajouter l'utilisateur à la base de données
+    db.session.commit() # Mettre la base de données à jour
     return redirect(url_for("auth.login"))
 
 @auth.route('/deconnexion')
 @login_required
 def logout():
-    logout_user()
-    return redirect(url_for('main.index'))
+    logout_user() # Déconnexion de l'utilisateur
+    return redirect(url_for('main.index')) # Redirection vers la page index
