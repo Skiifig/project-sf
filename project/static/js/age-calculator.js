@@ -1,4 +1,5 @@
 function calc() {
+    inputH = document.getElementById("age");
     year = document.getElementById("year-select").value;
     month = document.getElementById("month-select").value;
     day = document.getElementById("day-select").value;
@@ -17,6 +18,7 @@ function calc() {
         res = 'Vous avez ' + `${age}` + ' ans'
         field.classList.replace("text-danger", "text-primary")
         document.querySelector('#submit').disabled = false;
+        inputH.value =  age
     }
     if (res) {
         field.type = 'text';

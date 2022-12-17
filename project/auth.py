@@ -34,13 +34,18 @@ def signup_post():
     lname = request.form.get("lname")
     email = request.form.get("email")
     password = request.form.get("password")
+    age = request.form.get("age")
     user = User.query.filter_by(email=email).first()
     if user:
         return redirect(url_for(auth.signup))
-    new_user = User(fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'))
+    new_user = User(fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'), age=age)
     db.session.add(new_user) # Ajouter l'utilisateur à la base de données
     db.session.commit() # Mettre la base de données à jour
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("main.confirmation"))
+
+@auth.route('/confirmation')
+def confirmation():
+    return render_template("confirmation.html")
 
 @auth.route('/deconnexion')
 @login_required

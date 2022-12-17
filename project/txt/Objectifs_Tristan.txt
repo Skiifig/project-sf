@@ -1,4 +1,4 @@
 Objectifs du week-end :
-Page de settings qui permettra à l'utilisateur de supprimer son compte
-Finir design connexion
-Finir serveur
+Page de settings qui permettra à l'utilisateur de supprimer son compte et de se déconnecter
+Développer serveur
+Ecrire documentation

@@ -18,20 +18,57 @@
 <body>
     <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 90px auto 0 auto;">
         <div class="text-center avatar mb-2">
-            <img src="../static/images/avatar.png" alt="" height="150" width="150">
-            <div class="name Fs(36) p-1" style="font-weight: 900;">Fname & Lname</div>
+            <img src="../static/images/avatar.png">
+            <div class="name Fs(36) p-1" style="font-weight: 900;">{{ user.fname }}</div>
         </div>
-        <div class="profile-container">
-            <div class="profile-card position-relative C(p)">
+        <div class="profile-container C(p)">
+            <div class="profile-card position-relative" data-toggle="modal" data-target="#Modal">
                 <div class="content">
-                    <div class="title">Mon mail</div>
-                    <div class="subtitle">{{ user.mail }}</div>
-                </div> 
+                    <div class="title">Mes informations</div>
+                    <div class="subtitle">{{ user.lname }}</div>
+                </div>
             </div>
-            <div class="profile-card position-relative C(p)">
+            <div class="profile-card position-relative" data-toggle="modal" data-target="#Modal">
                 <div class="content">
-                    <div class="title">Mon mot de passe</div>
-                    <div class="subtitle">A</div>
+                    <div class="title">Localisation</div>
+                    <div class="subtitle">Ville</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title">Informations du compte</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="p-5 modal-body d-flex flex-column border-0 align-items-center">
+                        <div class="row pb-2">
+                            <div class="input-block">
+                                <label class="d-block Fs(14)">Prénom</label>
+                                <input type="text" value="{{ user.fname }}">
+                            </div>
+                            <div class="input-block">
+                                <label class="d-block Fs(14)">Nom</label>
+                                <input type="text" value="{{ user.lname }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-block">
+                                <label class="d-block Fs(14)">Adresse e-mail</label>
+                                <input type="text" value="{{ user.email }}">
+                            </div>
+                            <div class="input-block">
+                                <label class="d-block Fs(14)">Identifiant</label>
+                                <input type="text" value="{{ user.id }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
                 </div>
             </div>
         </div>
