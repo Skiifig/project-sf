@@ -4,6 +4,10 @@ from . import db
 
 main = Blueprint('main', __name__)
 
+@main.before_app_first_request
+def create_tables():
+    db.create_all()
+
 @main.route('/')
 def index():
     return render_template('index.html')
