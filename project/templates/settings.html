@@ -16,13 +16,13 @@
     <title>Paramètres</title>
 </head>
 <body>
-    <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 90px auto 0 auto;">
+    <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 45px auto 0 auto;">
         <div class="text-center avatar mb-2">
             <img src="{{ user.profile_pic }}" width="150" height="150">
             <div class="name Fs(36) p-1" style="font-weight: 900;">{{ user.fname }}</div>
         </div>
-        <div class="profile-container C(p)">
-            <div class="profile-card position-relative" data-toggle="modal" data-target="#Modal">
+        <div class="profile-container">
+            <div class="profile-card position-relative C(p)" data-toggle="modal" data-target="#Modal">
                 <div class="content">
                     <div class="title">Mes informations</div>
                     <div class="subtitle">{{ user.fname }}</div>
@@ -86,6 +86,20 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid d-flex align-items-center justify-content-around">
+            <form action="/deconnexion">
+                <button class="btn btn-outline-warning">Déconnexion</button>
+            </form>
+            <div class="profile-card text-center ml-5" style="width: 30%;">
+                <div class="content">
+                    <div class="title">Centres d'intérêt</div>
+                    <div class="subtitle">{{ user.hobbies }}</div>
+                </div>
+            </div>
+            <form action="/delete">
+                <button class="btn btn-outline-danger">Supprimer mon compte</button>
+            </form>
         </div>
     </div>
 </body>

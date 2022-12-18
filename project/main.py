@@ -13,20 +13,6 @@ def create_tables():
 def index():
     return render_template('index.html')
 
-@main.route('/confirmation')
-def confirmation():
-    return render_template('confirmation.html')
-
-@main.route('/confirmation', methods=['POST'])
-def confirmation_post():
-    user = User.query.filter_by(email=current_user.email).first()
-    user.sexe = request.form.get("sexe")
-    user.localisation = request.form.get("localisation")
-    user.orientation = request.form.get("orientation")
-    db.session.commit()
-    return redirect(url_for("auth.login"))
-
-
 @main.route('/profile')
 @login_required
 def profile():
