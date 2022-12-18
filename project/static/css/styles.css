@@ -71,3 +71,6 @@
 .Z\(2\) {
     z-index: 2;
 }
+.O\(n\) {
+    outline: none;
+}
