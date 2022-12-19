@@ -55,6 +55,6 @@ Pour développer ce projet nous avons utilisé les programmes/logiciels suivants
 ## Auteurs
 Liste des membres du projet :
 * **Tristan** _alias_ [@Skiifig](https://github.com/Skiifig)
-* **Louis** _alias_ [@compotecassis](https://github.com/compotecassis)
+* **Louis** _alias_ [@compotecassis](https://github.com/compotescassis)
 
-Retrouvez la liste des contributeurs [ici](https://github.com/project-sf/contributors) pour voir qui à aidé au projet !
+Retrouvez la liste des contributeurs [ici](https://github.com/skiifig/project-sf/contributors) pour voir qui à aidé au projet !
