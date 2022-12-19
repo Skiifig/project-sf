@@ -14,6 +14,7 @@ Cette commande va créer un environnement virtuel qui nous sera utile pour insta
 
 Ensuite, pour nous activer l'environnement virtuel il faut lancer la commande suivante :
 ``source auth/Scripts/activate``
+_Cette étape sera à effectuer à chaque fois que vous fermerez le terminal depuis lequel vous lancer le serveur_
 Rappelons ici que cette commande et la plupart du projet a été testé uniquement sur windows. Pour un OS de type linux la commande sera :
 ``source auth/bin/activate``
 
@@ -23,37 +24,33 @@ En effet, Flask est le framework dont nous nous servons pour le serveur.
 
 Maintenant nous allons définir le répertoire de notre dossier grâce à cette commande
 ``export FLASK_APP=project``
-Cette dernière étape sera à effectuer à chaque fois que vous fermerez le terminal depuis lequel vous lancer le serveur
+_Cette étape sera à effectuer à chaque fois que vous fermerez le terminal depuis lequel vous lancer le serveur_
 
 Si vous avez réussi à exécuter toutes ses commandes sans erreur le projet devrait être prêt à fonctionner.
 
-### Erreurs possibles
-
-Vous pourriez recontrer plusieurs erreurs lors de votre tentative d'installation du projet
-
 ## Démarrage
 
-Pour démarrer le projet 
+Une fois le projet correctement installé, exécuter la commande ``flask run``, elle permettra l'initialisation du serveur et de la base de données.
+Pour vous connecter au serveur, lancez votre navigateur préféré et tapez "localhost:5000" : il s'agit de l'adresse du serveur sur votre machine.  
+
+### Erreurs possibles
+
+Vous pourriez recontrer plusieurs erreurs lors de votre tentative d'installation et de démarrage du projet, voici les plus fréquentes :
+
+- ``flask: command not found`` => Celle-ci se produit lorsque l'environnement virtuel n'est pas initialisé ou lorsque les dépendances ne sont pas installées
+- ``Error: could not locate a Flask application`` => Vous pouvez rencontrer cette erreur si vous avez mal définit la variable FLASK_APP
+- ``Error: could not import 'project.project`` => Pour résoudre cette erreur un simple ``cd ..`` suffira.
+
+Si vous croisez d'autres erreurs essayer dans un premier temps de les résoudre vous-mêmes (grâce à des forums), puis dans un deuxième temps, contactez les contributeurs du projet dont la liste de trouve plus bas.
 
 ## Fabriqué avec
 
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+Pour développer ce projet nous avons utilisé les programmes/logiciels suivants :
 
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
-
-## Contributing
-
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
-
-## Versions
-Listez les versions ici 
-_exemple :_
-**Dernière version stable :** 5.0
-**Dernière version :** 5.1
-Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
+* Bootstrap(https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Framework CSS & JS (frontend)
+* Visual Studio Code(https://code.visualstudio.com) - Editeur de code
+* Flask(https://flask.palletsprojects.com/en/2.2.x/) - Framework Python (backend)
+* Github(https://github.com) - Système de contrôle de version
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
@@ -62,13 +59,3 @@ Listez le(s) auteur(s) du projet ici !
 Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
 
 _(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
-
-## License
-
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
-
-
-
-Singlefind est un projet de site de rencontre
-Il utilise les languages suivantes : Python , Css, Javascript, Html
-Avec les modules suivants : Flask, flask_login, flask_sqlalchemy, bootstrap, github
