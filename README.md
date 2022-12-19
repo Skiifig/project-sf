@@ -47,10 +47,10 @@ Si vous croisez d'autres erreurs essayer dans un premier temps de les résoudre 
 
 Pour développer ce projet nous avons utilisé les programmes/logiciels suivants :
 
-* Bootstrap(https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Framework CSS & JS (frontend)
-* Visual Studio Code(https://code.visualstudio.com) - Editeur de code
-* Flask(https://flask.palletsprojects.com/en/2.2.x/) - Framework Python (backend)
-* Github(https://github.com) - Système de contrôle de version
+* [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Framework CSS & JS (frontend)
+* [Visual Studio Code](https://code.visualstudio.com) - Editeur de code
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/) - Framework Python (backend)
+* [Github](https://github.com) - Système de contrôle de version
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
