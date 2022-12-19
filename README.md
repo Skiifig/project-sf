@@ -6,7 +6,7 @@ Singlefind est un projet de site de rencontre développé dans le cadre des cour
 Le but de ce document est de vous expliquer les prérequis pour que le projet fonctionne pas de vous expliquer son fonctionnement
 Pour avoir des explications sur le fonctionnement sur le projet, nous vous conseillons de lire notre documentation.
 
-### Installation
+## Installation
 
 Après avoir cloner le projet dans un dossier (avec l'archive ou avec git) , ouvrez un terminal avec le répertoire du projet et exécuter la commande suivante :
 ``python3 -m venv auth``
@@ -28,7 +28,7 @@ _Cette étape sera à effectuer à chaque fois que vous fermerez le terminal dep
 
 Si vous avez réussi à exécuter toutes ses commandes sans erreur le projet devrait être prêt à fonctionner.
 
-## Démarrage
+### Démarrage
 
 Une fois le projet correctement installé, exécuter la commande ``flask run``, elle permettra l'initialisation du serveur et de la base de données.
 Pour vous connecter au serveur, lancez votre navigateur préféré et tapez "localhost:5000" : il s'agit de l'adresse du serveur sur votre machine.  
@@ -53,9 +53,8 @@ Pour développer ce projet nous avons utilisé les programmes/logiciels suivants
 * [Github](https://github.com) - Système de contrôle de version
 
 ## Auteurs
-Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@outout14](https://github.com/outout14)
+Liste des membres du projet :
+* **Tristan** _alias_ [@Skiifig](https://github.com/Skiifig)
+* **Louis** _alias_ [@compotecassis](https://github.com/compotecassis)
 
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+Retrouvez la liste des contributeurs [ici](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
