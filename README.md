@@ -1,6 +1,6 @@
 # Projet Singlefind
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)]
+![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
 
 Une petite description du projet
 
