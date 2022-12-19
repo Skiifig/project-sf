@@ -2,9 +2,9 @@
 
 ![forthebadge](project/badges/projet-nsi-terminale.svg)     ![forthebadge](project/badges/python-flask.svg)     ![forthebadge](project/badges/bootstrap-4.0.svg)      ![forthebadge](project/badges/fait-avec-github.svg)
 
-Singlefind est un projet de site de rencontre développé dans le cadre des cours de NSI
-Le but de ce document est de vous expliquer les prérequis pour que le projet fonctionne pas de vous expliquer son fonctionnement
-Pour avoir des explications sur le fonctionnement sur le projet, nous vous conseillons de lire notre documentation.
+Singlefind est un projet de site de rencontre développé dans le cadre des cours de NSI.
+Le but de ce document est de vous expliquer les prérequis pour que le projet fonctionne pas de vous expliquer son fonctionnement.
+Pour avoir des explications sur le fonctionnement sur le projet, nous vous conseillons de lire notre [documentation](https://www.canva.com/design/DAFVMh7-8q8/aPnWPXd2rqjSdGNrK0UxWg/edit?layoutQuery=presentation+de+projet).
 
 ## Installation
 
