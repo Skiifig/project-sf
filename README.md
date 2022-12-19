@@ -1,35 +1,39 @@
 # Projet Singlefind
 
-![forthebadge](project/badges/projet-nsi-terminale.svg)       ![forthebadge](project/badges/python-flask.svg)       ![forthebadge](project/badges/bootstrap-4.0.svg)        ![forthebadge](project/badges/fait-avec-github.svg)
+![forthebadge](project/badges/projet-nsi-terminale.svg)     ![forthebadge](project/badges/python-flask.svg)     ![forthebadge](project/badges/bootstrap-4.0.svg)      ![forthebadge](project/badges/fait-avec-github.svg)
 
-Une petite description du projet
-
-## Pour commencer
-
-Entrez ici les instructions pour bien débuter avec votre projet...
-
-### Pré-requis
-
-Ce qu'il est requis pour commencer avec votre projet...
-
-- Programme 1
-- Programme 2
-- etc...
+Singlefind est un projet de site de rencontre développé dans le cadre des cours de NSI
+Le but de ce document est de vous expliquer les prérequis pour que le projet fonctionne pas de vous expliquer son fonctionnement
+Pour avoir des explications sur le fonctionnement sur le projet, nous vous conseillons de lire notre documentation.
 
 ### Installation
 
-Les étapes pour installer votre programme....
+Après avoir cloner le projet dans un dossier (avec l'archive ou avec git) , ouvrez un terminal avec le répertoire du projet et exécuter la commande suivante :
+``python3 -m venv auth``
+Cette commande va créer un environnement virtuel qui nous sera utile pour installer les dépendances du projet
 
-Dites ce qu'il faut faire...
+Ensuite, pour nous activer l'environnement virtuel il faut lancer la commande suivante :
+``source auth/Scripts/activate``
+Rappelons ici que cette commande et la plupart du projet a été testé uniquement sur windows. Pour un OS de type linux la commande sera :
+``source auth/bin/activate``
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
+Une fois l'environnement virtuel activé il faut installer les modules python nécéssaires au fonctionnement du projet
+``pip install flask flask_login flask_sqlalchemy``
+En effet, Flask est le framework dont nous nous servons pour le serveur.
 
+Maintenant nous allons définir le répertoire de notre dossier grâce à cette commande
+``export FLASK_APP=project``
+Cette dernière étape sera à effectuer à chaque fois que vous fermerez le terminal depuis lequel vous lancer le serveur
 
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+Si vous avez réussi à exécuter toutes ses commandes sans erreur le projet devrait être prêt à fonctionner.
+
+### Erreurs possibles
+
+Vous pourriez recontrer plusieurs erreurs lors de votre tentative d'installation du projet
 
 ## Démarrage
 
-Dites comment faire pour lancer votre projet
+Pour démarrer le projet 
 
 ## Fabriqué avec
 
@@ -68,5 +72,3 @@ Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LI
 Singlefind est un projet de site de rencontre
 Il utilise les languages suivantes : Python , Css, Javascript, Html
 Avec les modules suivants : Flask, flask_login, flask_sqlalchemy, bootstrap, github
-Le but de ce document est de vous expliquer les prérequis pour que le projet fonctionne pas de vous l'expliquer
-Pour avoir des explications sur le fonctionnement sur le projet, nous vous conseillons de lire notre documentation
