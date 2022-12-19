@@ -1,6 +1,6 @@
 # Projet Singlefind
 
-![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](project/badges/projet-nsi-terminale.svg)![forthebadge](project/badges/python-flask.svg)![forthebadge](project/badges/bootstrap-4.0.svg)![forthebadge](project/badges/fait-avec-github.svg)
 
 Une petite description du projet
 
