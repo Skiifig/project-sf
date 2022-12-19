@@ -57,4 +57,4 @@ Liste des membres du projet :
 * **Tristan** _alias_ [@Skiifig](https://github.com/Skiifig)
 * **Louis** _alias_ [@compotecassis](https://github.com/compotecassis)
 
-Retrouvez la liste des contributeurs [ici](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
+Retrouvez la liste des contributeurs [ici](https://github.com/project-sf/contributors) pour voir qui à aidé au projet !
