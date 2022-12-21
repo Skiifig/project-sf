@@ -1,18 +1,10 @@
-.fade-in-1 {
-    animation: fade-in 2s;
-}
-
-.fade-in-2 {
-    animation: fade-in 4s;
-}
-
-.fade-in-3 {
-    animation: fade-in 6s;
+.fade-in {
+  animation: fade-in 3s;
 }
 
 @keyframes fade-in {
-    0% {opacity: 0; margin-top: 40%;}
-    100% {opacity: 1; margin-top: 3%;}
+  0% {opacity: 0; margin-top: 40%;}
+  100% {opacity: 1; margin-top: 3%;}
 }
 
 .profile-card .background {

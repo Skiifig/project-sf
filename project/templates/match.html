@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="../static/css/match.css">
+    <script src="../static/js/anim-card.js"></script>
     <link rel="shortcut icon" href="../static/images/logo.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,14 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Matching...</title>
 </head>
-<body class="Ov(h)">
+<body class="Ov(h)" onload="cardSynchro()">
     <div class="title-wrapper text-center p-4">
         <h2 class="title">Voici les profils qui vous correspondent</h2>
     </div>
     <div class="container-lg d-flex" style="margin-top: 3%;">
-        <div class="fade-in-1 m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px;">
-            <img src="../static/images/user1.jpg" alt="profile-sample1" class="background"/>
-            <img src="../static/images/user1.jpg" alt="profile-sample1" class="profile"/>
+        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
+            <img src="../static/images/user1.jpg" class="background"/>
+            <img src="../static/images/user1.jpg" class="profile"/>
             <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
                 <h4 class="p-2">Ursula Gurnmeister</h4>
                 <div class="icons d-flex flex-column">
@@ -44,9 +45,9 @@
                 </div>
             </figcaption>
         </div>
-        <div class="fade-in-2 m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px;">
-            <img src="../static/images/user2.jpg" alt="profile-sample1" class="background"/>
-            <img src="../static/images/user2.jpg" alt="profile-sample1" class="profile"/>
+        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
+            <img src="../static/images/user2.jpg" class="background"/>
+            <img src="../static/images/user2.jpg" class="profile"/>
             <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
                 <h4 class="p-2">Lola Gardet</h4>
                 <div class="icons d-flex flex-column">
@@ -69,9 +70,9 @@
                 </div>
             </figcaption>
         </div>
-        <div class="fade-in-3 m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px;">
-            <img src="../static/images/user3.jpg" alt="profile-sample1" class="background"/>
-            <img src="../static/images/user3.jpg" alt="profile-sample1" class="profile"/>
+        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
+            <img src="../static/images/user3.jpg" class="background"/>
+            <img src="../static/images/user3.jpg" class="profile"/>
             <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
                 <h4 class="p-2">Angèle Geffroy</h4>
                 <div class="icons d-flex flex-column">

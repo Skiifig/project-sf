@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, Flask
 from flask_login import login_required, current_user
 from .models import User
 from . import db
@@ -22,3 +22,10 @@ def profile():
 @login_required
 def settings():
     return render_template('settings.html', user=current_user)
+
+@main.route('/match')
+@login_required
+def match():
+    nb_user = User.query.all()
+    if len(nb_user) < 10:
+        return "ERREUR : La base doit comporter au moins 10 utilisateurs pour pouvoir faire un match", 502

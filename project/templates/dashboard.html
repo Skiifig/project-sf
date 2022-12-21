@@ -20,10 +20,16 @@
         <button type="submit" class="settings m-2 p-1"><i class="fa-solid fa-gear fa-2x"></i></button>
     </form>
     <div class="text-center my-5 Fs(36) Fw(b) text-info">Connecté en tant que {{ name }}</div>
-    <div class="bottom-navbar" style="border-top: 3px solid black;">
-        <button id="accueil" class="bg-transparent active navbar-item w-100 C(p)" href="#">Accueil</button>
-        <button id="find" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" href="#">Trouver</button>
-        <button id="messages" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" href="#" data-toggle="modal" data-target="#modal">Mes messages</button>
+    <div class="bottom-navbar align-items-center justify-content-around d-flex position-fixed w-100" style="border-top: 3px solid black; bottom: 0;">
+        <form action="/profile">
+            <button id="accueil" class="text-muted bg-transparent active navbar-item w-100" style="padding: 1rem 7rem;">Accueil</button>
+        </form>
+        <form action="/match">
+            <button id="find" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" style="padding: 1rem 7rem;">Trouver</button>
+        </form>
+        <form action="">
+            <button id="messages" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" style="padding: 1rem 7rem;" data-toggle="modal" data-target="#modal">Mes messages</button>
+        </form>
     </div>
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

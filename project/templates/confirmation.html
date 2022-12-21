@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Singlefind Inscription</title>
 </head>
-<body class="Ov(h)" style="background-color: grey;">
+<body class="Ov(h)" style="background-color: grey;" onload="handleCheck()">
     <div class="form-container text-center align-items-center pt-2 mt-2">
         <div class="title Fs(36) Fw(b) mb-1">Confirmez votre inscription</div>
         <form autocomplete="off" action="/confirmation" method="post" class="form-signin w-75 m-auto p-2 text-success">
@@ -46,35 +46,35 @@
 		        <div class="wrapper justify-content-around d-flex M(0auto)">
 		    		<div class="d-flex float-left">
 		        		<div class="custom-control custom-checkbox iconSelect mr-2">
-		            		<input onclick="handleCheck('Jeux vidéo')" type="checkbox" id="customCheck3" name="customCheck" value="1" class="custom-control-input">
+		            		<input onclick="handleCheck()" type="checkbox" id="customCheck3" name="hobbie" value="Jeux vidéo" class="custom-control-input">
 		            		<label class="C(p) custom-control-label" for="customCheck3">
 		            		<img src="../static/images/videogames.jpg" width=160 height=106>
 		            		<div class="mt-1">Jeux vidéo</div>
 		            		</label>
 		        		</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input onclick="handleCheck('Cuisine')" type="checkbox" id="customCheck4" name="customCheck" value="2" class="custom-control-input">
+							<input onclick="handleCheck()" type="checkbox" id="customCheck4" name="hobbie" value="Cuisine" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck4">
 							<img src="../static/images/cuisine.jpg" width=160 height=106>
 							<div class="mt-1">Cuisine</div>
 					   	 	</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input onclick="handleCheck('Cinema')" type="checkbox" id="customCheck5" name="customCheck" value="3" class="custom-control-input">
+							<input onclick="handleCheck()" type="checkbox" id="customCheck5" name="hobbie" value="Cinéma" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck5">
 							<img src="../static/images/cinema.jpg" width=160 height=106>
 							<div class="mt-1">Cinéma</div>
 							</label>
 				   	 	</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input onclick="handleCheck('Lecture')" type="checkbox" id="customCheck6" name="customCheck" value="4" class="custom-control-input">
+							<input onclick="handleCheck()" type="checkbox" id="customCheck6" name="hobbie" value="Lecture" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck6">
 							<img src="../static/images/lecture.jpg" width=160 height=106>
 							<div class="mt-1">Lecture</div>
 							</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input onclick="handleCheck('Musique')" type="checkbox" id="customCheck7" name="customCheck" value="5" class="custom-control-input">
+							<input onclick="handleCheck()" type="checkbox" id="customCheck7" name="hobbie" value="Musique" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck7">
 							<img src="../static/images/musique.jpeg" width=160 height=106>
 							<div class="mt-1">Musique</div>
@@ -84,7 +84,7 @@
 		    	</div>
 		    </div>
 		    <div class="container">
-        		<button type="submit" style="margin-top:16px" id="btn" class="btn btn-primary btn-lg btn-block">Validation</button>
+        		<button type="submit" id="validation" class="mt-4 btn btn-primary btn-lg btn-block">Validation</button>
         	</div>
 			<input type="hidden" id="sexe" name="sexe">
 			<input type="hidden" id="orientation" name="orientation">

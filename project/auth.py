@@ -57,6 +57,7 @@ def confirmation_post():
     user.sexe = request.form.get("sexe")
     user.localisation = request.form.get("localisation")
     user.orientation = request.form.get("orientation")
+    user.hobbies = request.form.get("hobbies")
     db.session.commit()
     return redirect(url_for("auth.login"))
 
@@ -71,6 +72,6 @@ def logout():
 def user_delete():
     global email
     user = User.query.filter_by(email=email).first()
-    db.session.delete(user)
+    db.session.delete(user) # Suppression de l'utilisateur
     db.session.commit()
     return redirect(url_for('main.index'))
