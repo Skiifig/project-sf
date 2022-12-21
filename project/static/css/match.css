@@ -1,0 +1,44 @@
+.fade-in-1 {
+    animation: fade-in 2s;
+}
+
+.fade-in-2 {
+    animation: fade-in 4s;
+}
+
+.fade-in-3 {
+    animation: fade-in 6s;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0; margin-top: 40%;}
+    100% {opacity: 1; margin-top: 3%;}
+}
+
+.profile-card .background {
+  width: 100%;
+  opacity: 0.2;
+  filter: grayscale(100%) blur(10px);
+}
+
+.profile-card .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  max-width: 125px;
+  opacity: 1;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+
+.profile-card i {
+  padding: 10px 5px;
+  text-align: left;
+  display: inline-block;
+  font-size: 32px;
+  color: #ffffff;
+  opacity: 0.65;
+}

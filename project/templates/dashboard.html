@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="../static/css/dashboard.css">
-    <link rel="stylesheet" href="../static/css/global.css">
     <script src="../static/js/modal.js"></script>
     <link rel="shortcut icon" type="image/png" href="../static/images/logo.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,13 +16,32 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <form action="/settings" method="get">
+    <form action="/settings">
         <button type="submit" class="settings m-2 p-1"><i class="fa-solid fa-gear fa-2x"></i></button>
     </form>
     <div class="text-center my-5 Fs(36) Fw(b) text-info">Connecté en tant que {{ name }}</div>
     <div class="bottom-navbar" style="border-top: 3px solid black;">
-        <a id="accueil" class="active navbar-item" href="#">Accueil</a>
-        <a id="find" class="text-dark navbar-item" href="#">Trouver</a>
+        <button id="accueil" class="bg-transparent active navbar-item w-100 C(p)" href="#">Accueil</button>
+        <button id="find" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" href="#">Trouver</button>
+        <button id="messages" class="bg-transparent not-active text-dark navbar-item w-100 C(p)" href="#" data-toggle="modal" data-target="#modal">Mes messages</button>
+    </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">À venir prochainement !</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="../static/images/developpement en cours.jpg" width="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

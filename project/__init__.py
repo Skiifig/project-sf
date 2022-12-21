@@ -22,9 +22,11 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
+    # importer les routes de auth.py
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
+    # importer les routes de main.py
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 

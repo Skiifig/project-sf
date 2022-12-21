@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="../static/css/button.css">
     <link rel="stylesheet" href="../static/css/confirmation.css">
-    <link rel="stylesheet" href="../static/css/global.css">
 	<script src="../static/js/suggestions.js"></script>
 	<script src="../static/js/user_detail.js"></script>
 	<script src="../static/js/recommandation.js"></script>
@@ -47,35 +46,35 @@
 		        <div class="wrapper justify-content-around d-flex M(0auto)">
 		    		<div class="d-flex float-left">
 		        		<div class="custom-control custom-checkbox iconSelect mr-2">
-		            		<input type="checkbox" id="customCheck3" name="customCheck" value="1" class="custom-control-input">
+		            		<input onclick="handleCheck('Jeux vidéo')" type="checkbox" id="customCheck3" name="customCheck" value="1" class="custom-control-input">
 		            		<label class="C(p) custom-control-label" for="customCheck3">
 		            		<img src="../static/images/videogames.jpg" width=160 height=106>
 		            		<div class="mt-1">Jeux vidéo</div>
 		            		</label>
 		        		</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input type="checkbox" id="customCheck4" name="customCheck" value="2" class="custom-control-input">
+							<input onclick="handleCheck('Cuisine')" type="checkbox" id="customCheck4" name="customCheck" value="2" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck4">
 							<img src="../static/images/cuisine.jpg" width=160 height=106>
 							<div class="mt-1">Cuisine</div>
 					   	 	</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input type="checkbox" id="customCheck5" name="customCheck" value="3" class="custom-control-input">
+							<input onclick="handleCheck('Cinema')" type="checkbox" id="customCheck5" name="customCheck" value="3" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck5">
 							<img src="../static/images/cinema.jpg" width=160 height=106>
 							<div class="mt-1">Cinéma</div>
 							</label>
 				   	 	</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input type="checkbox" id="customCheck6" name="customCheck" value="4" class="custom-control-input">
+							<input onclick="handleCheck('Lecture')" type="checkbox" id="customCheck6" name="customCheck" value="4" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck6">
 							<img src="../static/images/lecture.jpg" width=160 height=106>
 							<div class="mt-1">Lecture</div>
 							</label>
 						</div>
 						<div class="custom-control custom-checkbox iconSelect ml-2">
-							<input type="checkbox" id="customCheck7" name="customCheck" value="5" class="custom-control-input">
+							<input onclick="handleCheck('Musique')" type="checkbox" id="customCheck7" name="customCheck" value="5" class="custom-control-input">
 							<label class="C(p) custom-control-label" for="customCheck7">
 							<img src="../static/images/musique.jpeg" width=160 height=106>
 							<div class="mt-1">Musique</div>
@@ -89,6 +88,7 @@
         	</div>
 			<input type="hidden" id="sexe" name="sexe">
 			<input type="hidden" id="orientation" name="orientation">
+			<input type="hidden" name="hobbies" id="hobbies">
         </form>
 	</div>
 </body>

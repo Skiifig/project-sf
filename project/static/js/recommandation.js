@@ -4,20 +4,20 @@ function recommend(event) {
     const suggBox = document.querySelector(".autocom-box");
     let userData = event.target.value;
     let emptyArray = [];
-    if (userData) {
+    if (userData) { // Si l'input n'est pas vide
         emptyArray = suggestions.filter((data) => {
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); // Rajouter les villes qui commencent par le début de l'input dans le tableau
         });
         emptyArray = emptyArray.map((data) => {
-            return data = '<li>' + data + '</li>';
+            return data = '<li>' + data + '</li>'; // Ajout de l'html pour chaque valeur du tableau
         });
         searchWrapper.classList.add("active");
         showRecommandation(emptyArray, inputBox ,suggBox);
-        let allList = document.getElementsByTagName('li');
-        for (let i = 0; i < allList.length; i++) {
-            allList[i].setAttribute("onclick", "select(this)")
+        let allList = document.getElementsByTagName('li'); // Prendre tous les éléments ayant le tag 'li'
+        for (let i = 0; i < allList.length; i++) { // Pour chaque élement
+            allList[i].setAttribute("onclick", "select(this)") // Rajouter l'attribut onclick avec l'appel de la fonction select
         }
-    } else {
+    } else { // Sinon cacher les recommandations
         searchWrapper.classList.remove("active")
     }
 }
