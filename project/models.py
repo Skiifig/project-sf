@@ -6,7 +6,7 @@ class User(UserMixin, db.Model):
     profile_pic = db.Column(db.String(100))
     fname = db.Column(db.String(30))
     lname = db.Column(db.String(30))
-    email = db.Column(db.String(30), unique=True)
+    email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(20))
     age = db.Column(db.Integer)
     sexe = db.Column(db.String(10))

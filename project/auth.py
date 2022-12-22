@@ -41,7 +41,7 @@ def signup_post():
     password = request.form.get("password")
     age = request.form.get("age")
     user = User.query.filter_by(email=email).first()
-    path_to_picture = '/static/images/' + secure_filename(profile_pic.filename) # Définition du chemin d'accès à la photo de profil
+    path_to_picture = '/static/images/user/' + secure_filename(profile_pic.filename) # Définition du chemin d'accès à la photo de profil
     profile_pic.save(os.path.join(current_app.config['UPLOAD_FOLDER'], secure_filename(profile_pic.filename))) # Enregistrement de la photo
     if user: # Si l'utilisateur existe déjà
         return redirect(url_for('auth.login')) # Redirection de la page de connexion

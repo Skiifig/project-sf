@@ -10,7 +10,7 @@ def create_app():
 
     app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuop1'
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db" # Définition du chemin et du nom de la base de données
-    app.config["UPLOAD_FOLDER"] = join(dirname(realpath(__file__)), 'static/images/') # Définition du chemin d'enregistrement des photos de profils
+    app.config["UPLOAD_FOLDER"] = join(dirname(realpath(__file__)), 'static/images/user') # Définition du chemin d'enregistrement des photos de profils
 
     db.init_app(app) # initialise l'app avec l'extension
 
