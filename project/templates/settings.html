@@ -17,32 +17,32 @@
 <body>
     <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 30px auto 0 auto;">
         <div class="text-center avatar mb-2">
-            <img src="{{ user.profile_pic }}" width="150" height="150">
+            <img class="rounded-circle" src="{{ user.profile_pic }}" width="150" height="150">
             <div class="name Fs(36) p-1" style="font-weight: 900;">{{ user.fname }}</div>
         </div>
         <div class="profile-container">
             <div class="profile-card position-relative C(p)" data-toggle="modal" data-target="#Modal">
                 <div class="content">
                     <div class="title">Mes informations</div>
-                    <div class="subtitle">{{ user.fname }}</div>
+                    <div class="subtitle Fs(16)">{{ user.fname }}</div>
                 </div>
             </div>
             <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Localisation</div>
-                    <div class="subtitle">{{ user.localisation }}</div>
+                    <div class="subtitle Fs(16)">{{ user.localisation }}</div>
                 </div>
             </div>
             <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Sexe</div>
-                    <div class="subtitle">{{ user.sexe }}</div>
+                    <div class="subtitle Fs(16)">{{ user.sexe }}</div>
                 </div>
             </div>
             <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Orientation Sexuelle</div>
-                    <div class="subtitle">{{ user.orientation }}</div>
+                    <div class="subtitle Fs(16)">{{ user.orientation }}</div>
                 </div>
             </div>
         </div>
@@ -63,17 +63,11 @@
                                 <input class="border-0 text-center" type="text" value="{{ user.lname }}" disabled>
                             </div>
                         </div>
-                        <div class="row pb-3">
+                        <div class="row">
                             <div class="input-block">
                                 <label class="d-block Fs(14)">Adresse e-mail</label>
                                 <input class="border-0 text-center" type="text" value="{{ user.email }}" disabled>
                             </div>
-                            <div class="input-block">
-                                <label class="d-block Fs(14)">Identifiant</label>
-                                <input class="border-0 text-center" type="text" value="{{ user.id }}" disabled>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="input-block">
                                 <label class="d-block Fs(14)">Age</label>
                                 <input class="border-0 text-center" type="text" value="{{ user.age }}" disabled>
@@ -93,7 +87,7 @@
             <div class="profile-card text-center ml-5" style="width: 30%;">
                 <div class="content">
                     <div class="title">Centres d'intérêt</div>
-                    <div class="subtitle">{{ user.hobbies }}</div>
+                    <div class="subtitle Fs(16)">{{ user.hobbies }}</div>
                 </div>
             </div>
             <form action="/delete">

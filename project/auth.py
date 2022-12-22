@@ -1,8 +1,10 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
+from werkzeug.utils import secure_filename
 from .models import User
 from . import db
+import os
 
 auth = Blueprint('auth', __name__)
 global email # Cette variable permet d'avoir accès à l'utilisateur puisque chaque adresse mail est unique
@@ -32,16 +34,18 @@ def signup():
 @auth.route('/signup', methods=['POST'])
 def signup_post():
     global email
-    profile_pic = request.form.get("profile_pic")
+    profile_pic = request.files["profilePic"]
     fname = request.form.get("fname")
     lname = request.form.get("lname")
     email = request.form.get("email")
     password = request.form.get("password")
     age = request.form.get("age")
     user = User.query.filter_by(email=email).first()
+    path_to_picture = '/static/images/' + secure_filename(profile_pic.filename)
+    profile_pic.save(os.path.join(current_app.config['UPLOAD_FOLDER'], secure_filename(profile_pic.filename)))
     if user: # Si l'utilisateur existe déjà
         return redirect(url_for('auth.login')) # Redirection de la page de connexion
-    new_user = User(profile_pic=profile_pic, fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'), age=age) # Création de l'utilisateur
+    new_user = User(profile_pic=path_to_picture, fname=fname, lname=lname, email=email, password=generate_password_hash(password, method='sha256'), age=age) # Création de l'utilisateur
     db.session.add(new_user) # Ajouter l'utilisateur à la base de données
     db.session.commit() # Mettre la base de données à jour
     return redirect(url_for("auth.confirmation")) # Redirection vers la page de confirmation

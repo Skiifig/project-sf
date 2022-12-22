@@ -18,12 +18,11 @@
     <title>Singlefind Inscription</title>
 </head>
 <body onload="FillAllSelector()">
-    <div class="form-container text-center align-items-center py-4 my-5">
-        <form action="/signup" class="form-signin w-100 m-auto p-1" style="max-width: 375px;" method="POST">
-            <div id="input-container">
-                <i class="fa-solid fa-2x fa-users bg-danger rounded-circle p-3" style="border: 3px solid black;" onclick="autoclick()">
-                    <input class="d-none" type="file" name="photo" id="inputF" onchange="loadImg(event)">
-                </i>
+    <div class="form-container text-center align-items-center py-3 my-5">
+        <form action="/signup" class="form-signin w-100 m-auto p-1" style="max-width: 375px;" method="POST" enctype="multipart/form-data">
+            <div class="input-container">
+                <i id="icon-reg" class="fa-solid fa-2x fa-users bg-danger rounded-circle p-3" style="border: 3px solid black;" onclick="autoclick()"></i>
+                <input class="d-none" type="file" name="profilePic" id="inputF" onchange="loadImg(event)">
             </div>
             <h1 class="h3 mt-3 mb-4 font-weight-normal">S'inscrire à Singlefind</h1>
             <div class="name-container d-flex mb-3">
