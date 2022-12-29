@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/css/button.css">
     <link rel="stylesheet" href="../static/css/confirmation.css">
 	<script src="../static/js/suggestions.js"></script>
+	<script src="../static/js/confirmation-progress.js"></script>
 	<script src="../static/js/user_detail.js"></script>
 	<script src="../static/js/recommandation.js"></script>
     <link rel="shortcut icon" type="image/png" href="../static/images/logo.ico"/>
@@ -30,7 +31,7 @@
                 </div>
                 <div id="question-container" class="flex-column d-flex border p-4" style="max-width: 500px; min-width: 500px">
                     <span class="question Fs(26) mb-5" style="color: #ed147d;">Dans quelle ville habitez-vous ?</span>
-                    <input name="localisation" id="input-city" onkeyup="recommend(event)" class="location border" type="text" placeholder="Indiquez votre ville la plus proche">
+                    <input name="localisation" id="input-city" onkeyup="recommend(event)" class="location border" type="text" placeholder="Indiquez votre ville la plus proche" onchange="updateProgress(event)">
 					<div class="autocom-box text-left text-dark p-2 border d-none" style="overflow-y: auto; opacity: 0;"></div>
                 </div>
                 <div class="question-container flex-column d-flex border p-4" style="max-width: 400px; min-width: 400px">
@@ -91,5 +92,8 @@
 			<input type="hidden" name="hobbies" id="hobbies">
         </form>
 	</div>
+	<div class="progress position-absolute" style="bottom: 0; left: 0; right: 0;">
+        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
 </body>
 </html>
