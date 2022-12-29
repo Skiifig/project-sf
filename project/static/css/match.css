@@ -7,6 +7,12 @@
   100% {opacity: 1; margin-top: 3%;}
 }
 
+.match-background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#e66465, #DC1186);
+}
+
 .profile-card .background {
   width: 100%;
   opacity: 0.2;
@@ -40,4 +46,8 @@
   height: 75px;
   border-radius: 60px !important;
   margin: -30px -10px;
+}
+
+.btn-modal:hover {
+  background-color: white;
 }

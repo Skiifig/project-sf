@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="../static/css/match.css">
     <script src="../static/js/anim-card.js"></script>
+    <script src="../static/js/match_hobbies.js"></script>
     <link rel="shortcut icon" href="../static/images/logo.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,12 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Matching...</title>
 </head>
-<body class="Ov(h)" onload="cardSynchro()">
+<body class="Ov(h)" onload="cardSynchro(), updateHobbies()">
     <div class="title-wrapper text-center p-4">
         <h2 class="title">Voici les profils qui vous correspondent</h2>
     </div>
     <div class="container-lg d-flex" style="margin-top: 3%;">
     {%for i in range(0, len)%}
+        <input type="hidden" name="hobbies" id="inputHobbies" value="{{ Matchs[i].hobbies }}">
         <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 550px; opacity: 0;">
             <img src="{{ '..' + Matchs[i].profile_pic }}" class="background"/>
             <img src="{{ '..' + Matchs[i].profile_pic }}" class="profile"/>
@@ -35,15 +37,15 @@
                         <i class="pb-3 fa-solid fa-cake-candles"></i>
                         <p class="m-2 Fs(20)">{{ Matchs[i].age }} ans</p>
                     </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-book"></i>
-                        <p class="m-2 Fs(20)">Aime la lecture</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-music"></i>
-                        <p class="m-2 Fs(20)">Aime la musique</p>
-                    </div>
-                    <button type="button" class="btn-modal ml-auto" data-toggle="modal" data-target="#match-modal">
+                        <div class="d-flex flex-row">
+                            <i id="icon-0" class="pb-3 fa-solid"></i>
+                            <p id="text-0" class="m-2 Fs(20)"></p>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <i id="icon-1" class="pb-3 fa-solid"></i>
+                            <p id="text-1" class="m-2 Fs(20)"></p>
+                        </div>
+                    <button type="button" class="btn-modal ml-auto C(p)" data-toggle="modal" data-target="#match-modal">
                         <i class="fa-solid text-success fa-paper-plane"></i>
                     </button>
                     <div class="modal fade" id="match-modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
@@ -53,9 +55,9 @@
                                     <h4>Contactez votre Singlefind</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4>L'adresse mail de votre match : 
+                                    <h5>L'adresse mail de votre match : 
                                         <a class="text-secondary" href="mailto:{{ Matchs[i].email }}?subject=Match-Singlefind">{{ Matchs[i].email }}</a>
-                                    </h4>
+                                    </h5>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
