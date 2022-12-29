@@ -1,5 +1,5 @@
 .fade-in {
-  animation: fade-in 3s;
+  animation: fade-in 2s;
 }
 
 @keyframes fade-in {
@@ -33,4 +33,11 @@
   font-size: 32px;
   color: #ffffff;
   opacity: 0.65;
+}
+
+.btn-modal {
+  width: 75px;
+  height: 75px;
+  border-radius: 60px !important;
+  margin: -30px -10px;
 }

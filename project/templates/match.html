@@ -20,19 +20,20 @@
         <h2 class="title">Voici les profils qui vous correspondent</h2>
     </div>
     <div class="container-lg d-flex" style="margin-top: 3%;">
-        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
-            <img src="../static/images/user1.jpg" class="background"/>
-            <img src="../static/images/user1.jpg" class="profile"/>
+    {%for i in range(0, len)%}
+        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 550px; opacity: 0;">
+            <img src="{{ '..' + Matchs[i].profile_pic }}" class="background"/>
+            <img src="{{ '..' + Matchs[i].profile_pic }}" class="profile"/>
             <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
-                <h4 class="p-2">Ursula Gurnmeister</h4>
+                <h4 class="p-2">{{ Matchs[i].fname }} {{ Matchs[i].lname }}</h4>
                 <div class="icons d-flex flex-column">
                     <div class="d-flex flex-row align-items-center">
                         <i class="pb-3 fa-solid fa-location-dot"></i>
-                        <p class="m-2 Fs(20)">Tours</p>
+                        <p class="m-2 Fs(20)">{{ Matchs[i].localisation }}</p>
                     </div>
                     <div class="d-flex flex-row">
                         <i class="pb-3 fa-solid fa-cake-candles"></i>
-                        <p class="m-2 Fs(20)">24 ans</p>
+                        <p class="m-2 Fs(20)">{{ Matchs[i].age }} ans</p>
                     </div>
                     <div class="d-flex flex-row">
                         <i class="pb-3 fa-solid fa-book"></i>
@@ -42,55 +43,30 @@
                         <i class="pb-3 fa-solid fa-music"></i>
                         <p class="m-2 Fs(20)">Aime la musique</p>
                     </div>
-                </div>
-            </figcaption>
-        </div>
-        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
-            <img src="../static/images/user2.jpg" class="background"/>
-            <img src="../static/images/user2.jpg" class="profile"/>
-            <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
-                <h4 class="p-2">Lola Gardet</h4>
-                <div class="icons d-flex flex-column">
-                    <div class="d-flex flex-row align-items-center">
-                        <i class="pb-3 fa-solid fa-location-dot"></i>
-                        <p class="m-2 Fs(20)">Nantes</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-cake-candles"></i>
-                        <p class="m-2 Fs(20)">30 ans</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-gamepad"></i>
-                        <p class="m-2 Fs(20)">Aime les jeux vidéo</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-film"></i>
-                        <p class="m-2 Fs(20)">Aime le cinéma</p>
+                    <button type="button" class="btn-modal ml-auto" data-toggle="modal" data-target="#match-modal">
+                        <i class="fa-solid text-success fa-paper-plane"></i>
+                    </button>
+                    <div class="modal fade" id="match-modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Contactez votre Singlefind</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>L'adresse mail de votre match : 
+                                        <a class="text-secondary" href="mailto:{{ Matchs[i].email }}?subject=Match-Singlefind">{{ Matchs[i].email }}</a>
+                                    </h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </figcaption>
         </div>
-        <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 500px; opacity: 0;">
-            <img src="../static/images/user3.jpg" class="background"/>
-            <img src="../static/images/user3.jpg" class="profile"/>
-            <figcaption class="w-100 position-absolute" style="left: 0; top: 35%; padding: 15px 25px;">
-                <h4 class="p-2">Angèle Geffroy</h4>
-                <div class="icons d-flex flex-column">
-                    <div class="d-flex flex-row align-items-center">
-                        <i class="pb-3 fa-solid fa-location-dot"></i>
-                        <p class="m-2 Fs(20)">Orléans</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="pb-3 fa-solid fa-cake-candles"></i>
-                        <p class="m-2 Fs(20)">38 ans</p>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <i class="fa-solid fa-kitchen-set"></i>
-                        <p class="m-2 Fs(20)">Aime la cuisine</p>
-                    </div>
-                </div>
-            </figcaption>
-        </div>
+    {%endfor%}
     </div>
 </body>
 </html>
