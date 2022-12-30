@@ -20,9 +20,10 @@
     <div class="title-wrapper text-center p-4">
         <h2 class="title">Voici les profils qui vous correspondent</h2>
     </div>
+    <input type="hidden" name="" id="lenMatch" value="{{ len }}">
     <div class="container-lg d-flex" style="margin-top: 3%;">
-    {%for i in range(0, len)%}
-        <input type="hidden" name="hobbies" id="inputHobbies" value="{{ Matchs[i].hobbies }}">
+    {%for i in range(0, 3)%}
+        <input type="hidden" name="inputHobbies" value="{{ Matchs[i].hobbies }}">
         <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 550px; opacity: 0;">
             <img src="{{ '..' + Matchs[i].profile_pic }}" class="background"/>
             <img src="{{ '..' + Matchs[i].profile_pic }}" class="profile"/>
@@ -38,12 +39,12 @@
                         <p class="m-2 Fs(20)">{{ Matchs[i].age }} ans</p>
                     </div>
                         <div class="d-flex flex-row">
-                            <i id="icon-0" class="pb-3 fa-solid"></i>
-                            <p id="text-0" class="m-2 Fs(20)"></p>
+                            <i id="icon-0-{{i}}" class="pb-3 fa-solid"></i>
+                            <p id="text-0-{{i}}" class="m-2 Fs(20)"></p>
                         </div>
                         <div class="d-flex flex-row">
-                            <i id="icon-1" class="pb-3 fa-solid"></i>
-                            <p id="text-1" class="m-2 Fs(20)"></p>
+                            <i id="icon-1-{{i}}" class="pb-3 fa-solid"></i>
+                            <p id="text-1-{{i}}" class="m-2 Fs(20)"></p>
                         </div>
                     <button type="button" class="btn-modal ml-auto C(p)" data-toggle="modal" data-target="#match-modal">
                         <i class="fa-solid text-success fa-paper-plane"></i>
