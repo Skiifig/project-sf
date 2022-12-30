@@ -19,7 +19,7 @@ Rappelons ici que cette commande et la plupart du projet a été testé uniqueme
 ``source auth/bin/activate``
 
 Une fois l'environnement virtuel activé il faut installer les modules python nécéssaires au fonctionnement du projet
-``pip install flask flask_login flask_sqlalchemy``
+``pip install flask flask_login flask_sqlalchemy geopy``
 En effet, Flask est le framework dont nous nous servons pour le serveur.
 
 Maintenant nous allons définir le répertoire de notre dossier grâce à cette commande
