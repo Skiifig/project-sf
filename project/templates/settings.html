@@ -15,6 +15,9 @@
     <title>Paramètres</title>
 </head>
 <body>
+    <form action="/dashboard">
+        <button type="submit" class="go-back border-0 bg-transparent ml-3 p-1 C(p)"><i class="fa-solid fa-3x fa-arrow-left-long"></i></button>
+    </form>
     <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 30px auto 0 auto;">
         <div class="text-center avatar mb-2">
             <img class="rounded-circle" src="{{ user.profile_pic }}" width="150" height="150">
@@ -27,19 +30,19 @@
                     <div class="subtitle Fs(16)">{{ user.fname }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative">
+            <div class="profile-card position-relative C(p)">
                 <div class="content">
                     <div class="title">Localisation</div>
                     <div class="subtitle Fs(16)">{{ user.localisation }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative">
+            <div class="profile-card position-relative C(p)">
                 <div class="content">
                     <div class="title">Sexe</div>
                     <div class="subtitle Fs(16)">{{ user.sexe }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative">
+            <div class="profile-card position-relative C(p)">
                 <div class="content">
                     <div class="title">Orientation Sexuelle</div>
                     <div class="subtitle Fs(16)">{{ user.orientation }}</div>
@@ -50,27 +53,27 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p class="modal-title">Informations du compte</p>
+                        <h5 class="modal-title">Informations du compte</h5>
                     </div>
-                    <div class="p-5 modal-body d-flex flex-column border-0 align-items-center text-center">
+                    <div class="py-3 modal-body d-flex flex-column border-0 align-items-center text-center">
                         <div class="row pb-2">
-                            <div class="input-block">
-                                <label class="d-block Fs(14)">Prénom</label>
-                                <input class="border-0 text-center" type="text" value="{{ user.fname }}" disabled>
+                            <div class="input-block p-2">
+                                <label class="d-block Fs(16)">Prénom</label>
+                                <input class="border-0 text-center Br(100)" type="text" value="{{ user.fname }}" disabled>
                             </div>
-                            <div class="input-block">
-                                <label class="d-block Fs(14)">Nom</label>
-                                <input class="border-0 text-center" type="text" value="{{ user.lname }}" disabled>
+                            <div class="input-block p-2">
+                                <label class="d-block Fs(16)">Nom</label>
+                                <input class="border-0 text-center Br(100)" type="text" value="{{ user.lname }}" disabled>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-block">
-                                <label class="d-block Fs(14)">Adresse e-mail</label>
-                                <input class="border-0 text-center" type="text" value="{{ user.email }}" disabled>
+                            <div class="input-block p-2">
+                                <label class="d-block Fs(16)">Adresse e-mail</label>
+                                <input class="border-0 text-center Br(100)" type="text" value="{{ user.email }}" disabled>
                             </div>
-                            <div class="input-block">
-                                <label class="d-block Fs(14)">Age</label>
-                                <input class="border-0 text-center" type="text" value="{{ user.age }}" disabled>
+                            <div class="input-block p-2">
+                                <label class="d-block Fs(16)">Age</label>
+                                <input class="border-0 text-center Br(100)" type="text" value="{{ user.age }}" disabled>
                             </div>
                         </div>
                     </div>
@@ -84,7 +87,7 @@
             <form action="/deconnexion">
                 <button class="btn btn-outline-warning">Déconnexion</button>
             </form>
-            <div class="profile-card text-center ml-5" style="width: 30%;">
+            <div class="profile-card text-center ml-5 C(p)" style="width: 30%;">
                 <div class="content">
                     <div class="title">Centres d'intérêt</div>
                     <div class="subtitle Fs(16)">{{ user.hobbies }}</div>

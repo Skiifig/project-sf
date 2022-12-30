@@ -14,7 +14,6 @@
 
 .settings {
     position: absolute;
-    bottom: -1;
     top: 0;
     right: 0;
     border: 3px solid grey;
@@ -23,10 +22,7 @@
     cursor: pointer;
 }
 
-.deconnexion {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
+.settings:hover {
+    transition: transform 1s;
+    transform: rotate(180deg);
 }

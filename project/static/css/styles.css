@@ -10,10 +10,6 @@
 .Ovy\(x\) {
     overflow-x: hidden;
 }
-.Expand {
-    width: 100%;
-    height: 100%;
-}
 .Mh\(100\%\) {
     min-height: 100%;
 }
@@ -76,4 +72,7 @@
 }
 .O\(n\) {
     outline: none;
+}
+.Br\(100\) {
+    border-radius: 100px;
 }

@@ -17,3 +17,9 @@
     font-weight: 400;
     font-size: 20px;
 }
+
+.go-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
