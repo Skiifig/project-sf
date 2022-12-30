@@ -23,7 +23,7 @@
     </div>
     <input type="hidden" name="" id="lenMatch" value="{{ len }}">
     <div class="container-lg d-flex" style="margin-top: 3%;">
-    {%for i in range(0, 3)%}
+    {%for i in range(0, len)%}
         <input type="hidden" name="inputHobbies" value="{{ Matchs[i].hobbies }}">
         <div class="m-auto profile-card position-relative text-white text-center bg-dark d-flex" style="width: 400px; height: 550px; opacity: 0;">
             <img src="{{ '..' + Matchs[i].profile_pic }}" class="background"/>

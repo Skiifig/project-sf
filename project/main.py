@@ -5,6 +5,7 @@ from geopy.distance import geodesic
 from .models import User
 from . import db
 
+geolocator = Nominatim(user_agent='myapp')
 main = Blueprint('main', __name__)
 
 @main.before_app_first_request
@@ -32,9 +33,42 @@ def match():
     if len(nb_user) < 10: # S'il y a moins de 10 inscrits
         return "ERREUR : La base doit comporter au moins 10 utilisateurs pour pouvoir faire un match", 502 # Redirection vers une page d'erreur
     else:
+        global res
+        res = {}
         all_cities = []
-        first_request = User.query.filter(User.localisation==current_user.localisation).all()
+        # Détermination de la ville du match
         for i in range(len(nb_user)):
             all_cities.append(nb_user[i].localisation)
-        Matchs = User.query.filter(User.sexe=='Femme').limit(3).all()
+        find_closer(all_cities, current_user.localisation)
+        # Détermination du sexe du match
+        if (current_user.orientation == "Homosexuel"):
+            match_sexe = current_user.sexe
+        elif (current_user.sexe == 'Femme'):
+            match_sexe = 'Homme'
+        else:
+            match_sexe = 'Femme'
+        # Détermination de l'âge du match
+        for i in range(current_user.age - 5, current_user.age + 5):
+            Matchs = User.query.filter_by(localisation = listToString(res), sexe = match_sexe, orientation = current_user.orientation, age = i).all()
+            if Matchs:
+                break
         return render_template('match.html', len=len(Matchs), Matchs=Matchs, request=request)
+
+
+def find_closer(all_cities, city):
+    all_cities.remove(city)
+    city = geolocator.geocode(city)
+    global res
+    cities = {}
+    for i in range(0, len(all_cities)):
+        cities[all_cities[i]] = geolocator.geocode(all_cities[i])
+        res[all_cities[i]] = cities[all_cities[i]].latitude, cities[all_cities[i]].longitude
+    for i in range(0, len(all_cities)):
+        res[all_cities[i]] = round(geodesic((res[all_cities[i]]), (city.latitude, city.longitude)).km)
+    tmp = min(res.values())
+    res = [key for key in res if res[key] == tmp]
+    return res
+
+def listToString(list):
+    base = ''
+    return base.join(list)
