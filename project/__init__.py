@@ -1,12 +1,15 @@
 from os.path import join, dirname, realpath
 from flask_sqlalchemy import SQLAlchemy
+from geopy.geocoders import Nominatim
 from flask_login import LoginManager
+from geopy.distance import geodesic
 from flask import Flask
 
 db = SQLAlchemy() # Création de la base de données
 
 def create_app():
     app = Flask(__name__) # Création de l'application
+    geolocator = Nominatim(user_agent='myapp')
 
     app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuop1'
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db" # Définition du chemin et du nom de la base de données

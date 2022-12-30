@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template
 from flask_login import login_required, current_user
+from flask import Blueprint, render_template
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
 from .models import User
 from . import db
 
@@ -30,5 +32,9 @@ def match():
     if len(nb_user) < 10: # S'il y a moins de 10 inscrits
         return "ERREUR : La base doit comporter au moins 10 utilisateurs pour pouvoir faire un match", 502 # Redirection vers une page d'erreur
     else:
+        all_cities = []
+        first_request = User.query.filter(User.localisation==current_user.localisation).all()
+        for i in range(len(nb_user)):
+            all_cities.append(nb_user[i].localisation)
         Matchs = User.query.filter(User.sexe=='Femme').limit(3).all()
-        return render_template('match.html', len=len(Matchs), Matchs=Matchs)
+        return render_template('match.html', len=len(Matchs), Matchs=Matchs, request=request)
