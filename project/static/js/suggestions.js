@@ -22,6 +22,6 @@ let suggestions = [
     "Saint-Denis", 
     "Saint-Étienne", 
     "Strasbourg", 
-    "Toulon", 
-    "Toulouse", 
+    "Toulon",
+    "Toulouse",
 ]

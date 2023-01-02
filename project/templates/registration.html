@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input name="password" id="password-field" type="password" class="form-control" placeholder="Mot de passe" onchange="updateProgress(event)" required>
+                <input name="password" id="password-field" type="password" minlength="5" maxlength="20" class="form-control" placeholder="Mot de passe" onchange="updateProgress(event)" required>
                 <div class="input-group-append C(p)">
                     <span onclick="updateField()" class="input-group-text"><i class="fa-solid fa-lock"></i></span>
                 </div>
