@@ -15,7 +15,7 @@
     <title>Paramètres</title>
 </head>
 <body>
-    <form action="/dashboard">
+    <form action="/profile">
         <button type="submit" class="go-back border-0 bg-transparent ml-3 p-1 C(p)"><i class="fa-solid fa-3x fa-arrow-left-long"></i></button>
     </form>
     <div class="profile-content d-flex flex-column align-items-center" style="max-width: 980px;margin: 30px auto 0 auto;">
@@ -30,19 +30,19 @@
                     <div class="subtitle Fs(16)">{{ user.fname }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative C(p)">
+            <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Localisation</div>
                     <div class="subtitle Fs(16)">{{ user.localisation }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative C(p)">
+            <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Sexe</div>
                     <div class="subtitle Fs(16)">{{ user.sexe }}</div>
                 </div>
             </div>
-            <div class="profile-card position-relative C(p)">
+            <div class="profile-card position-relative">
                 <div class="content">
                     <div class="title">Orientation Sexuelle</div>
                     <div class="subtitle Fs(16)">{{ user.orientation }}</div>
@@ -87,7 +87,7 @@
             <form action="/deconnexion">
                 <button class="btn btn-outline-warning">Déconnexion</button>
             </form>
-            <div class="profile-card text-center ml-5 C(p)" style="width: 30%;">
+            <div class="profile-card text-center ml-5" style="width: 30%;">
                 <div class="content">
                     <div class="title">Centres d'intérêt</div>
                     <div class="subtitle Fs(16)">{{ user.hobbies }}</div>

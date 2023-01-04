@@ -1,4 +1,5 @@
 function calc() {
+    res = undefined
     inputH = document.getElementById("age");
     year = document.getElementById("year-select").value;
     month = document.getElementById("month-select").value;

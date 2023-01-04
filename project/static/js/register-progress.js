@@ -5,5 +5,9 @@ function updateProgress(event) {
     field_filled += 1 // Incrémentation de la variable de 1
     value_bar = field_filled / 8 * 50 // Calcul de la nouvelle taille de la barre
     bar.style.width = `${Math.round(value_bar)}%` // Application de la nouvelle taille avec arondissement
-    event.target.removeAttribute('onchange') // Cette fonction ne se déclenche qu'une fois par élément
+    if (event.target.classList.contains('select')) {
+        event.target.removeAttribute('onfocus')
+    } else {
+        event.target.removeAttribute('onchange') // Cette fonction ne se déclenche qu'une fois par élément
+    }
 }

@@ -16,7 +16,7 @@ function updateHobbies() {
                     text.innerHTML = 'Aime la lecture';
                     icon.classList.add('fa-book');
                     break;
-                case 'Jeux Vidéo':
+                case 'Jeux vidéo':
                     text.innerHTML = 'Aime les jeux-vidéo';
                     icon.classList.add('fa-gamepad');
                     break;
