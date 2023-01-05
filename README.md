@@ -39,7 +39,7 @@ Vous pourriez recontrer plusieurs erreurs lors de votre tentative d'installation
 
 - ``flask: command not found`` => Celle-ci se produit lorsque l'environnement virtuel n'est pas initialisé ou lorsque les dépendances ne sont pas installées
 - ``Error: could not locate a Flask application`` => Vous pouvez rencontrer cette erreur si vous avez mal définit la variable FLASK_APP
-- ``Error: could not import 'project.project`` => Pour résoudre cette erreur un simple ``cd ..`` suffira.
+- ``Error: could not import 'project.project'`` => Pour résoudre cette erreur un simple ``cd ..`` suffira.
 
 Si vous croisez d'autres erreurs essayer dans un premier temps de les résoudre vous-mêmes (grâce à des forums), puis dans un deuxième temps, contactez les contributeurs du projet dont la liste de trouve plus bas.
 
